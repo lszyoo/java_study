@@ -5,16 +5,16 @@ import java.sql.DriverManager;
 
 public class InsertTable {
     public static void main(String[] args) throws Exception {
-        // Êı¾İ¿â»ù±¾ĞÅÏ¢
+        // æ•°æ®åº“åŸºæœ¬ä¿¡æ¯
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/java_test";
         String user = "root";
         String pwd = "123456";
 
-        // ¼ÓÔØÇı¶¯
+        // åŠ è½½é©±åŠ¨
         Class.forName(driver);
 
-        // Á¬½ÓÊı¾İ¿â
+        // è¿æ¥æ•°æ®åº“
         Connection con = DriverManager.getConnection(url, user, url);
         if (!con.isClosed())
             System.out.println("connect mysql successfully");

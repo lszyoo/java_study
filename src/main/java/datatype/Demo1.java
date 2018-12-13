@@ -1,16 +1,16 @@
 package datatype;
 
 /**
-   byte,short,char—int—long—float—double
-   byte,short,char之间不转换,他们参与运算首先转换为int类型
-   A:案例演示
-		面试题:看下面的程序是否有问题，如果有问题，请指出并说明理由。
-		byte b1 = 3;
-		byte b2 = 4;
-		byte b3 = b1 + b2;
-		byte b4 = 3 + 4;
-        那么byte b5 = b1+1;   ?
-*/
+ byte,short,char—int—long—float—double
+ byte,short,char之间不转换,他们参与运算首先转换为int类型
+ A:案例演示
+ 面试题:看下面的程序是否有问题，如果有问题，请指出并说明理由。
+ byte b1 = 3;
+ byte b2 = 4;
+ byte b3 = b1 + b2;
+ byte b4 = 3 + 4;
+ 那么byte b5 = b1+1;   ?
+ */
 public class Demo1 {
     public static void main(String[] args) {
         byte b1 = 3;

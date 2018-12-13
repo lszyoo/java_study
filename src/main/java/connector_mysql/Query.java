@@ -5,30 +5,30 @@ import java.util.Random;
 
 public class Query {
     /**
-     * Ê×ÏÈ×¼±¸Á½ÕÅ±í£º
-     *      student£¨class varchar(20), name varchar(20), sex varchar(10)£©
+     * é¦–å…ˆå‡†å¤‡ä¸¤å¼ è¡¨ï¼š
+     *      studentï¼ˆclass varchar(20), name varchar(20), sex varchar(10)ï¼‰
      *      people (id int, name varchar(), age int)
-     *  ÏÖ½« student ±íÖĞ name ÁĞ²åÈë people ÖĞ£¬id ºÍ age Îª¹Ì¶¨¼¸¸öÂÖÑ¯²åÈë
+     *  ç°å°† student è¡¨ä¸­ name åˆ—æ’å…¥ people ä¸­ï¼Œid å’Œ age ä¸ºå›ºå®šå‡ ä¸ªè½®è¯¢æ’å…¥
      */
 
     public static void main(String[] args) throws Exception {
-        // ¶¨ÒåÊı¾İ¿â»ù±¾ĞÅÏ¢
+        // å®šä¹‰æ•°æ®åº“åŸºæœ¬ä¿¡æ¯
         String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/java_test";       // ÈôÁ¬½ÓÔ¶³Ì¿âÖ»Ğè½« localhost »»³É Ô¶³ÌÖ÷»úip
+        String url = "jdbc:mysql://localhost:3306/java_test";       // è‹¥è¿æ¥è¿œç¨‹åº“åªéœ€å°† localhost æ¢æˆ è¿œç¨‹ä¸»æœºip
         String user = "root";
         String pwd = "123456";
 
-        // ¼ÓÔØÇı¶¯
+        // åŠ è½½é©±åŠ¨
         Class.forName(driver);
-        // Êı¾İ¿âÁ¬½Ó£¬Ïàµ±ÓÚ mysql -h url -uuser -ppwd
+        // æ•°æ®åº“è¿æ¥ï¼Œç›¸å½“äº mysql -h url -uuser -ppwd
         Connection conn = DriverManager.getConnection(url, user, pwd);
-        // ²âÊÔÁ¬½ÓÊÇ·ñ³É¹¦
+        // æµ‹è¯•è¿æ¥æ˜¯å¦æˆåŠŸ
         if (!conn.isClosed())
             System.out.println("connect mysql successfully");
 
         Statement state = conn.createStatement();
 
-        // ²éÑ¯ student ±íÖĞ name ÁĞ
+        // æŸ¥è¯¢ student è¡¨ä¸­ name åˆ—
         String sql = "SELECT * FROM student";
         ResultSet rs = state.executeQuery(sql);
 

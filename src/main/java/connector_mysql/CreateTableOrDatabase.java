@@ -7,13 +7,13 @@ import java.sql.Statement;
 
 public class CreateTableOrDatabase {
     public static void main(String[] args) {
-        // ¶¨ÒåÊı¾İ¿â»ù±¾ĞÅÏ¢
+        // å®šä¹‰æ•°æ®åº“åŸºæœ¬ä¿¡æ¯
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306";
         String user = "root";
         String pwd = "123456";
 
-        // ¼ÓÔØÇı¶¯
+        // åŠ è½½é©±åŠ¨
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException e) {
@@ -21,20 +21,20 @@ public class CreateTableOrDatabase {
         }
 
         try {
-            // Êı¾İ¿âÁ¬½Ó
+            // æ•°æ®åº“è¿æ¥
             Connection connection = DriverManager.getConnection(url, user, pwd);
 
-            // ²âÊÔÊÇ·ñÁ¬½ÓÊı¾İ¿â³É¹¦
+            // æµ‹è¯•æ˜¯å¦è¿æ¥æ•°æ®åº“æˆåŠŸ
             if (!connection.isClosed())
                 System.out.println("connect mysql successfully");
 
-            // Ö´ĞĞ sql Óï¾äµÄÀà
+            // æ‰§è¡Œ sql è¯­å¥çš„ç±»
             Statement statement = connection.createStatement();
             statement.executeLargeUpdate("CREATE DATABASE IF NOT EXISTS java_test");
-            // ½«¸ø¶¨µÄ SQL ÃüÁîÌí¼Óµ½´Ë Statement ¶ÔÏóµÄµ±Ç°ÃüÁîÁĞ±íÖĞ¡£
+            // å°†ç»™å®šçš„ SQL å‘½ä»¤æ·»åŠ åˆ°æ­¤ Statement å¯¹è±¡çš„å½“å‰å‘½ä»¤åˆ—è¡¨ä¸­ã€‚
             statement.addBatch("USE java_test");
             statement.addBatch("CREATE TABLE IF NOT EXISTS student(name VARCHAR(20), sex VARCHAR(10), class VARCHAR(20))");
-            // ½«Ò»ÅúÃüÁîÌá½»¸øÊı¾İ¿âÀ´Ö´ĞĞ£¬Èç¹ûÈ«²¿ÃüÁîÖ´ĞĞ³É¹¦£¬Ôò·µ»Ø¸üĞÂ¼ÆÊı×é³ÉµÄÊı×é¡£
+            // å°†ä¸€æ‰¹å‘½ä»¤æäº¤ç»™æ•°æ®åº“æ¥æ‰§è¡Œï¼Œå¦‚æœå…¨éƒ¨å‘½ä»¤æ‰§è¡ŒæˆåŠŸï¼Œåˆ™è¿”å›æ›´æ–°è®¡æ•°ç»„æˆçš„æ•°ç»„ã€‚
             statement.executeBatch();
             statement.close();
             connection.close();

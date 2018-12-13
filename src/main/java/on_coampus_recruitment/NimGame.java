@@ -3,13 +3,13 @@ package on_coampus_recruitment;
 import java.util.Scanner;
 
 /**
- * ¸øÎÒÃÇÒ»¶ÑÊ¯×Ó£¬Ã¿´Î¿ÉÒÔÄÃÒ»¸ö¡¢Á½¸ö»òÈı¸ö£¬Á½¸öÈËÂÖÁ÷ÄÃ£¬ÄÃµ½×îºóÒ»¸öÊ¯×ÓµÄÈË»ñÊ¤£¬ÏÖÔÚ¸øÎÒÃÇÒ»¶ÑÊ¯×ÓµÄ¸öÊı£¬ÎÊÎÒÃÇÄÜ²»ÄÜÓ®¡£
+ * ç»™æˆ‘ä»¬ä¸€å †çŸ³å­ï¼Œæ¯æ¬¡å¯ä»¥æ‹¿ä¸€ä¸ªã€ä¸¤ä¸ªæˆ–ä¸‰ä¸ªï¼Œä¸¤ä¸ªäººè½®æµæ‹¿ï¼Œæ‹¿åˆ°æœ€åä¸€ä¸ªçŸ³å­çš„äººè·èƒœï¼Œç°åœ¨ç»™æˆ‘ä»¬ä¸€å †çŸ³å­çš„ä¸ªæ•°ï¼Œé—®æˆ‘ä»¬èƒ½ä¸èƒ½èµ¢ã€‚
  */
 public class NimGame {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         if (num / 4 != 0)
-            System.out.println("±ØÊ¤");
+            System.out.println("å¿…èƒœ");
     }
 }

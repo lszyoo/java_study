@@ -7,7 +7,7 @@ package datatype;
 public class Demo2 {
     public static void main(String[] args) {
         System.out.println(5/2);            // 2
-        System.out.println((double)5/2);   // 2.5
-        System.out.println(5/1.5);         // 3.3333333333333335
+        System.out.println((double)5/2);    // 2.5
+        System.out.println(5/1.5);          // 3.3333333333333335
     }
 }

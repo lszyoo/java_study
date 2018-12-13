@@ -14,7 +14,7 @@ public class Ha {
     public static void test(String str) {
         if (str.length() < 2 || str.length() > 15)
             return;
-//            System.out.println("字符串长度不小于 2");
+//            System.out.println("脳脰路没麓庐鲁陇露脠虏禄脨隆脫脷 2");
 
 //        Map<Character, Integer> map = new HashMap<>();
 //        for (int i = 0; i < str.length(); i++) {
