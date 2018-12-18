@@ -13,6 +13,7 @@ public enum Week {
         this.name = name;
         this.index = index;
     }
+
     // set、get 方法
     public String getName() {
         return name;
@@ -29,6 +30,7 @@ public enum Week {
     public void setIndex(int index) {
         this.index = index;
     }
+
     // 重写方法
     @Override
     public String toString() {

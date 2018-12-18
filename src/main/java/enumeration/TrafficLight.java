@@ -10,6 +10,7 @@ enum Signal {
 
 public class TrafficLight {
     Signal color = Signal.RED;
+
     private void change() {
         switch (color) {
             case RED:
