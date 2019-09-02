@@ -1,11 +1,52 @@
 package collection;
 
-import java.util.AbstractList;
-import java.util.ArrayList;
+import java.util.*;
 
 public class ArrayListDemo {
+    static class Student {
+        private String str;
+        private Student stu;
+        public Student(String str){
+            this.str = str;
+        }
+    }
     public static void main(String[] args) {
-//        ArrayList
+        Student st = new Student("xiaoming");
+        ArrayList<Student> list = new ArrayList();
+        list.add(st);
+        System.out.println(list.get(0).str);
+        List<Student> list1 = new LinkedList<>();
+        list1.add(st);
+        System.out.println(list1.get(0).str);
+        Student[] sts = new Student[5];
+        sts[0] = st;
+        System.out.println(st.str);
+        Map map = Collections.EMPTY_MAP;
+        System.out.println(map.size());
+        Set<Student> set = new HashSet<>();
+        set.add(st);
+        set.add(st);
+        System.out.println(set.size());
+//        map.put('a', 1);
+//        System.out.println(map.get(0));
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("1", "a");
+        map1.put("2", "b");
+        map1.put("3", "c");
+        Set<Map.Entry<String, String>> set1 = map1.entrySet();
+        System.out.println(set1.iterator().next());
+
+        System.out.println(String.format(" %s not in ('ALL','yqxiu1','yqxiu2','yqxiu3','yqxiu4','yqxiu5','mxyc1','mxyc2','mxyc3'" +
+                        ",'wanpu','jinshan','jx','maimai','zhuoyi','huatian','suopingjingling','mocha','mizhe','meika','lamabang'" +
+                        ",'js-az1','js-az2','js-az3','js-az4','js-az5','jfq-az1','jfq-az2','jfq-az3','jfq-az4','jfq-az5'" +
+                        ",'TF-toufang1','TF-toufang2','TF-toufang3','TF-toufang4','TF-toufang5','benzhan'" +
+                        ",'toufang1','toufang2','toufang3','toufang4','toufang5','toufang6'" +
+                        ",'tf-toufang1','tf-toufang2','tf-toufang3','tf-toufang4','tf-toufang5'" +
+                        ",'promotion_aso100','promotion_qianka','promotion_xiaoyu','promotion_dianru','promotion_malioaso'" +
+                        ",'promotion_malioaso-shequ','promotion_shike','promotion_julang_jl03', 'promotion_zuimei') " +
+                        "and %s not like 'promotion\\_jf\\_%%' ",
+                "we",
+                "we"));
     }
 }
 //        package java.util;

@@ -1,0 +1,18 @@
+1、常用类：String、StringBuilder、StringBuffer
+         Integer、int
+         Collection、Arrays
+         Date、Calendar、SimpleDateFormat
+         IO
+         System
+         Log
+         Factory
+         正则
+         Object
+         Runtime
+         Math
+         Random
+         Properties
+         Enum
+         Scanner
+         Long、Short、Boolean、Byte、Character、Double、Float
+         JDBC
