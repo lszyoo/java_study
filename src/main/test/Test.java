@@ -1,3 +1,4 @@
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -40,5 +41,10 @@ public class Test {
         Map map = new HashMap();
         map.put("a", null);
 
+        int[] arr = {1, 2, 3, 4};
+        String str2 = ArrayUtils.toString(arr, ","); // 数组转字符串(逗号分隔,首尾加大括号)
+        System.out.println(str2.substring(1, str2.length() - 1)); // {0,1,2,3,4,5}
+
+        System.out.println(list1.get(2));
     }
 }
