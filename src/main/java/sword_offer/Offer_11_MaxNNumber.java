@@ -1,7 +1,7 @@
 package sword_offer;
 
 /**
- * 大数问题：
+ * 大数问题：（较难）
  *
  * 输入数字n，按顺序打印出从 1 到最大的 n 位十进制数。比如输入 3，则打印出 1、2、3 一直到最大的 3 位数即 999
  */
@@ -33,6 +33,7 @@ public class Offer_11_MaxNNumber {
 
     // 核心逻辑
     public static void printOthers(char[] number, int n, int index){
+        // 设置 除首位的数字
         if(index == n - 1){
             // 所有的数都找到了
             printNumber(number);
