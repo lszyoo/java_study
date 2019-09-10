@@ -31,6 +31,7 @@ public class Offer_11_MaxNNumber {
         }
     }
 
+    // 核心逻辑
     public static void printOthers(char[] number, int n, int index){
         if(index == n - 1){
             // 所有的数都找到了
