@@ -1,6 +1,7 @@
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -47,5 +48,21 @@ public class Test {
 
 
         System.out.println((char)('0' + 0));
+
+        System.out.println(1 == 1l);
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
+
+        List list2 = new ArrayList();
+        list2.add("abc");
+        list2.add("bcd");
+        List list3 = new ArrayList();
+        for (Object o : list2) {
+            o = "\'" + o + "\'";
+            list3.add(o);
+        }
+        String emaliStr = ArrayUtils.toString(list3.toArray(), ",");
+        System.out.println(emaliStr.substring(1, emaliStr.length() - 1));
     }
 }
