@@ -32,7 +32,7 @@ public class InsertSort {
     public static int[] insertSort(int[] arr) {
         for(int i = 0; i < arr.length; i++){
             // 数组 arr 的前 0至i-1 位已经排好序，从第 i 位开始依次遍历比较之前排好序的部分，并插入
-            for(int j = i; j >= 0; j--){
+            for(int j = i; j > 0; j--){
                 // 新数组 长度为i，倒序遍历比较，插入，并且新数组增长1
                 if(arr[j] < arr[j-1]){
                     // 将新增元素前移，直至新增元素比新数组元素大的下标位置

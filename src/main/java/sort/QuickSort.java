@@ -38,7 +38,6 @@ public class QuickSort {
         while (lo < hi) {
             // 从后半部分向前扫描，如果大于等于基准，则指针向左移动，否则赋值给 lo 下标处
             while (arr[hi] >= key && hi > lo) {
-
                 hi--;
             }
             arr[lo] = arr[hi];

@@ -23,6 +23,9 @@ import org.apache.hadoop.hive.ql.parse.SemanticException;
  * 实现思路：
  *      对 AST 深度优先遍历，遇到操作的 token 则判断当前的操作，遇到 TOK_TAB 或 TOK_TABREF 则判断出
  *      当前操作的表，遇到子句则压栈当前处理，处理子句；子句处理完，栈弹出。
+ * 例子：
+ *      https://github.com/XBWer/JDT_AST_DOT
+ *      https://www.cnblogs.com/XBWer/p/7256288.html
  */
 public class HiveParse {
     private static final String UNKNOWN = "UNKNOWN";
@@ -70,7 +73,7 @@ public class HiveParse {
         String sql21 = "alter table mp add partition (b='1', c='1')";
         String sql22 = "select login.uid from login day_login left outer join (select uid from regusers where dt='20130101') day_regusers on day_login.uid=day_regusers.uid where day_login.dt='20130101' and day_regusers.uid is null";
         String sql23 = "select name from (select * from zpc left outer join def) d";
-        String parsesql = sql23;
+        String parsesql = sql14;
         HiveParse hp = new HiveParse();
         System.out.println(parsesql);
         ASTNode ast = pd.parse(parsesql);
@@ -267,7 +270,8 @@ public class HiveParse {
 
     private void prepareToParseCurrentNodeAndChilds(ASTNode ast){
         if (ast.getToken() != null) {
-            switch (ast.getToken().getType()) {//join 从句开始
+            switch (ast.getToken().getType()) {
+                // join 从句开始，3 个 case 返回同一个结果
                 case HiveParser.TOK_RIGHTOUTERJOIN:
                 case HiveParser.TOK_LEFTOUTERJOIN:
                 case HiveParser.TOK_JOIN:
@@ -329,6 +333,5 @@ public class HiveParse {
             System.out.println(key + "\t" + map.get(key));
         }
     }
-
 
 }
