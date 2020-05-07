@@ -1,4 +1,6 @@
-package reflect;
+package reflect.reflect_base;
+
+import reflect.reflect_base.Person;
 
 /**
  * 反射：就是通过class文件对象，去使用该文件中的成员变量，构造方法，成员方法。
@@ -42,7 +44,7 @@ public class ReflectCreateClassApp {
 
         // 方式3
         // ClassNotFoundException
-        Class c4 = Class.forName("reflect.Person");
+        Class c4 = Class.forName("reflect.reflect_base.Person");
         System.out.println(c == c4); // true
     }
 }

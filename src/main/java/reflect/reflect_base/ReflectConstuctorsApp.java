@@ -1,4 +1,6 @@
-package reflect;
+package reflect.reflect_base;
+
+import reflect.reflect_base.Person;
 
 import java.lang.reflect.Constructor;
 
@@ -16,7 +18,7 @@ import java.lang.reflect.Constructor;
 public class ReflectConstuctorsApp {
     public static void main(String[] args) throws Exception {
         // 获取字节码文件对象
-        Class c = Class.forName("reflect.Person");
+        Class c = Class.forName("reflect.reflect_base.Person");
 
         // 获取构造方法
         // public Constructor[] getConstructors():所有公共构造方法
@@ -26,10 +28,10 @@ public class ReflectConstuctorsApp {
             System.out.println(con);
          }
          /*
-            public reflect.Person(java.lang.String,int,java.lang.String)
-            reflect.Person(java.lang.String,int)
-            private reflect.Person(java.lang.String)
-            public reflect.Person()
+            public reflect.reflect_base.Person(java.lang.String,int,java.lang.String)
+            reflect.reflect_base.Person(java.lang.String,int)
+            private reflect.reflect_base.Person(java.lang.String)
+            public reflect.reflect_base.Person()
           */
 
         // 获取单个构造方法

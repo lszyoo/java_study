@@ -1,4 +1,4 @@
-package reflect;
+package reflect.reflect_base;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
 public class ReflectMemberVarApp {
     public static void main(String[] args) throws Exception {
         // 获取字节码文件对象
-        Class c = Class.forName("reflect.Person");
+        Class c = Class.forName("reflect.reflect_base.Person");
 
         // 获取所有的成员变量
         // Field[] fields = c.getFields();  // 只能获取公共的
@@ -20,9 +20,9 @@ public class ReflectMemberVarApp {
         for (Field field : fields) { System.out.println(field);
         }
         /*
-           private java.lang.String reflect.Person.name
-           int reflect.Person.age
-           public java.lang.String reflect.Person.address
+           private java.lang.String reflect.reflect_base.Person.name
+           int reflect.reflect_base.Person.age
+           public java.lang.String reflect.reflect_base.Person.address
          */
 
 

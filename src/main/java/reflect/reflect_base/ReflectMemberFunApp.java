@@ -1,4 +1,4 @@
-package reflect;
+package reflect.reflect_base;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 public class ReflectMemberFunApp {
     public static void main(String[] args) throws Exception {
         // 获取字节码文件对象
-        Class c = Class.forName("reflect.Person");
+        Class c = Class.forName("reflect.reflect_base.Person");
 
         // 获取所有的方法
         Method[] methods = c.getMethods();  // 获取自己的包括父亲的公共方法
@@ -18,10 +18,10 @@ public class ReflectMemberFunApp {
             System.out.println(method);
         }
         /*
-            public java.lang.String reflect.Person.toString()
-            public void reflect.Person.method(java.lang.String)
-            public void reflect.Person.show()
-            public java.lang.String reflect.Person.getString(java.lang.String,int)
+            public java.lang.String reflect.reflect_base.Person.toString()
+            public void reflect.reflect_base.Person.method(java.lang.String)
+            public void reflect.reflect_base.Person.show()
+            public java.lang.String reflect.reflect_base.Person.getString(java.lang.String,int)
             public final void java.lang.Object.wait() throws java.lang.InterruptedException
             public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException
             public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException
@@ -37,11 +37,11 @@ public class ReflectMemberFunApp {
             System.out.println(method);
         }
         /*
-            public java.lang.String reflect.Person.toString()
-            private void reflect.Person.function()
-            public void reflect.Person.method(java.lang.String)
-            public void reflect.Person.show()
-            public java.lang.String reflect.Person.getString(java.lang.String,int)
+            public java.lang.String reflect.reflect_base.Person.toString()
+            private void reflect.reflect_base.Person.function()
+            public void reflect.reflect_base.Person.method(java.lang.String)
+            public void reflect.reflect_base.Person.show()
+            public java.lang.String reflect.reflect_base.Person.getString(java.lang.String,int)
          */
 
 
