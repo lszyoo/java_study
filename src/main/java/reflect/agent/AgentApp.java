@@ -21,6 +21,7 @@ public class AgentApp {
         /*
             我们要创建一个动态代理对象
             Proxy类中有一个方法可以创建动态代理对象
+            ClassLoader 为类加载器
             public static Object newProxyInstance(ClassLoader loader,Class<?>[] interfaces,InvocationHandler h)
             我准备对ud对象做一个代理对象
          */
