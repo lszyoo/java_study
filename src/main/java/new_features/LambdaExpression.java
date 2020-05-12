@@ -1,4 +1,4 @@
-package java8_new_features;
+package new_features;
 
 /**
  * Lambda表达式专门针对只有一个方法的接口（即函数式接口）
