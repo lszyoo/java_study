@@ -1,6 +1,5 @@
 package sword_offer;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -34,7 +33,7 @@ public class Offer_3_PrintFromTailToHead {
         return list;
     }
 
-    // 定义一个链表
+    // 定义一个链表的节点
     static class ListNode {
         int val;
         ListNode next = null;
