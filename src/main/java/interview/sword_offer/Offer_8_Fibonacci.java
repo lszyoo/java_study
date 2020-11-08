@@ -1,4 +1,4 @@
-package sword_offer;
+package interview.sword_offer;
 
 /**
  * 输入一个整数 n，请你输出斐波那契数列的第 n 项（n <= 39）
