@@ -1,12 +1,14 @@
-package interview;
+package algorithm;
 
 /**
+ * 阿里飞猪 2020.11.02
+ *
  * 判断字符串A是否包含子字符串B
  *
  * @author liushuai
  * @create 2020/11/2
  */
-public class StrContains {
+public class Al_1_StrContains {
     public static void main(String[] args) {
         boolean flag = strContains("abcdfdfdfsde", "ab");
         System.out.println(flag);

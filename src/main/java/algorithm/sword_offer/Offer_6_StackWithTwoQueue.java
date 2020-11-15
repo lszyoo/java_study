@@ -1,4 +1,4 @@
-package interview.sword_offer;
+package algorithm.sword_offer;
 
 import java.util.LinkedList;
 import java.util.Queue;

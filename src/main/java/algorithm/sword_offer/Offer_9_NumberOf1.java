@@ -1,4 +1,4 @@
-package interview.sword_offer;
+package algorithm.sword_offer;
 
 /**
  * 输入一个整数，输出该数二进制表示中 1 的个数。

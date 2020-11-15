@@ -1,4 +1,4 @@
-package interview.sword_offer;
+package algorithm.sword_offer;
 
 /**
  * 在 O(1)的时间删除链表结点:

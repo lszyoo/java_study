@@ -1,9 +1,11 @@
-package interview;
+package algorithm;
 
 import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 百度 2020.10.20
+ *
  * 将非负十进制整数n转换成b进制。（其中b=2~16）
  *
  * 例子（3进制）：
@@ -19,8 +21,11 @@ import java.util.List;
  *       ｜————   1   1 * 3^1 + 1 * 3^0
  *       3｜  1
  *        ｜————  1
+ *
+ * @author liushuai
+ * @create
  */
-public class SysConvert {
+public class Al_2_SysConvert {
     public static void main(String[] args) {
         System.out.println(sysConvert1(14, 3)); // 112
         System.out.println(sysConvert2(9, 3));  // 100
