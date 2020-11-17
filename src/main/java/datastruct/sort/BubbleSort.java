@@ -1,4 +1,4 @@
-package sort;
+package datastruct.sort;
 
 /**
  * 冒泡排序是一种交换排序，其基本思想是：

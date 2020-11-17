@@ -1,4 +1,4 @@
-package datatype;
+package primarytype;
 
 /**
  byte,short,char—int—long—float—double

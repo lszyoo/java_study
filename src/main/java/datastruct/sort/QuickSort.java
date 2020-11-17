@@ -1,4 +1,4 @@
-package sort;
+package datastruct.sort;
 
 /**
  * 快速排序是冒泡排序的改进版，也是最好的一种内排序，利用了分治思想。

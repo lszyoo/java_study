@@ -1,4 +1,4 @@
-package sort;
+package datastruct.sort;
 
 /**
  * 直接插入排序是将未排序的数据插入至已排好序序列的合适位置。

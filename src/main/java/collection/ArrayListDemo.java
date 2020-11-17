@@ -1049,9 +1049,9 @@ public class ArrayListDemo {
 //
 //    @Override
 //    @SuppressWarnings("unchecked")
-//    public void sort(Comparator<? super E> c) {
+//    public void datastruct.sort(Comparator<? super E> c) {
 //        final int expectedModCount = modCount;
-//        Arrays.sort((E[]) elementData, 0, size, c);
+//        Arrays.datastruct.sort((E[]) elementData, 0, size, c);
 //        if (modCount != expectedModCount) {
 //            throw new ConcurrentModificationException();
 //        }

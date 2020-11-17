@@ -1,9 +1,9 @@
-package sort;
+package datastruct.sort;
 
 import java.util.Arrays;
 
 /**
- * Arrays.sort()采用了一种名为TimSort的排序算法，就是归并排序的优化版本。
+ * Arrays.datastruct.sort()采用了一种名为TimSort的排序算法，就是归并排序的优化版本。
  *
  * 归并排序基本思想：
  *      将待排序的数列分成若干个长度为1的子数列，然后将这些数列两两合并并排序；得到若干个长度为2的有序数列，

@@ -1,4 +1,4 @@
-package datatype;
+package primarytype;
 
 /**
  * int类型 / int类型 = 取整    可强转，为double

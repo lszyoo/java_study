@@ -1,4 +1,4 @@
-package sort;
+package datastruct.sort;
 
 /**
  * 堆排序是一种选择排序。

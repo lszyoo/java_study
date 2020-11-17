@@ -1,4 +1,4 @@
-package sort;
+package datastruct.sort;
 
 /**
  * 希尔排序严格来说是基于插入排序的思想，又被称为缩小增量排序。

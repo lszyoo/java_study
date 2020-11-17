@@ -1,4 +1,4 @@
-package find;
+package datastruct.find;
 
 import java.util.Arrays;
 
