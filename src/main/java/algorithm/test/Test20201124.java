@@ -1,12 +1,27 @@
-package algorithm;
+package algorithm.test;
 
 import datastruct.LinkList;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
-public class Test {
+public class Test20201124 {
+    // 奇偶链表
+    public Node oddEvenList(Node head) {
+        Node nodeTmp = head;
+
+        Node node = head.next;
+        Node nodeNext = node;
+        while (node != null && node.next != null) {
+            head.next = head.next.next;
+            head.next = head;
+
+            node.next = node.next.next;
+            node.next = node;
+        }
+        head.next = nodeNext;
+        return nodeTmp;
+    }
+
     public boolean strContains(String A, String B) {
         if (A == null || B == null) {
             return false;
@@ -87,5 +102,46 @@ public class Test {
             }
         }
         return -2;
+    }
+
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        boolean flag1 = set.add("a");
+        boolean flag2 = set.add("a");
+        System.out.println(flag1 + " -- " + flag2);
+
+
+        Map<String, String> map = new HashMap<>();
+        map.put("1", "");
+        map.put("2", "2");
+        map.put("3", null);
+        System.out.println(map);
+
+        int[][] arr = new int[2][4];
+        arr[0][0] = 0;
+        arr[0][1] = 1;
+        arr[0][2] = 2;
+        arr[0][3] = 3;
+        arr[1][0] = 0;
+        arr[1][1] = 1;
+        arr[1][2] = 2;
+        arr[1][3] = 3;
+        System.out.println(arr.length);
+        for (int j = 0; j < arr.length; j++) {
+            for (int k = 0; k < arr[0].length; k++) {
+                System.out.print(arr[j][k] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println(arr[0].length);
+        System.out.println(arr.length);
+    }
+
+    class Node {
+        Node next;
+        int data;
+        public Node (int data) {
+            this.data = data;
+        }
     }
 }
