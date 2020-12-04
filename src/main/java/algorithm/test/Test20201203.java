@@ -1,5 +1,7 @@
 package algorithm.test;
 
+import java.util.Arrays;
+
 public class Test20201203 {
     public static void main(String[] args) {
         int[] arr = new int[]{4, 7, 5, 3, 1};
@@ -29,6 +31,18 @@ public class Test20201203 {
 
         System.out.println();
         arr = insertSort(arr);
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+
+        System.out.println();
+        arr = shellSort(arr);
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+
+        System.out.println();
+        arr = mergeSort(arr);
         for (int i : arr) {
             System.out.print(i + " ");
         }
@@ -158,6 +172,56 @@ public class Test20201203 {
     }
 
     public static int[] shellSort(int[] arr) {
+        int len = arr.length;
+        // 每次分组，步长
+        for (int gap = len / 2; gap > 0; gap /= 2) {
+            // 每次从步长索引位置遍历
+            for (int i = gap; i < len; i++) {
+                // 组内排序，只不过是各组交叉进行的，不是一组排完后再排另一组
+                for (int j = i; j >= gap && arr[j] < arr[j - gap]; j -= gap) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j - gap];
+                    arr[j - gap] = arr[j];
+                }
+            }
+        }
+        return arr;
+    }
 
+    /**
+     * 归并排序
+     * @param arr
+     * @return
+     */
+    public static int[] mergeSort(int[] arr) {
+        int len = arr.length;
+        if (len < 2)
+            return arr;
+
+        int[] left = Arrays.copyOfRange(arr, 0, len / 2);
+        int[] right = Arrays.copyOfRange(arr, len / 2, len);
+        return merge(mergeSort(left), mergeSort(right));
+    }
+
+    public static int[] merge(int[] left, int[] right) {
+        int llen = left.length;
+        int rlen = right.length;
+        int[] res = new int[llen + rlen];
+
+        int li = 0, ri = 0, resi = 0;
+        while (li < llen && ri < rlen) {
+            if (left[li] > right[ri])
+                res[resi++] = right[ri++];
+            else
+                res[resi++] = left[li++];
+        }
+        while (li < llen) {
+            res[resi++] = left[li++];
+        }
+        while (ri < rlen) {
+            res[resi++] = right[ri++];
+        }
+
+        return res;
     }
 }
