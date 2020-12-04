@@ -4,6 +4,11 @@ public class Test20201201 {
     public static void main(String[] args) {
         System.out.println(strContains("asmdddfd", "ddd"));
         System.out.println(ten2Three(9));
+
+        int[][] arr = new int[10][8];
+        System.out.println(arr.length);
+        System.out.println(arr[0].length);
+        yanghuiTriangle(5);
     }
 
     public static boolean strContains(String a, String b) {
@@ -60,5 +65,18 @@ public class Test20201201 {
         return sb.reverse().toString();
     }
 
-    public void yanghuiTriangle()
+    public static void yanghuiTriangle(int m) {
+        int[][] arr = new int[m][m];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i) {
+                    arr[i][j] = 1;
+                } else {
+                    arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+                }
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
 }

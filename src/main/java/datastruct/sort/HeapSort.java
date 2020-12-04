@@ -88,7 +88,7 @@ public class HeapSort {
               所以需要递归，确定交换的子节点比它的子节点都大，
               而没有动的子节点是不需要进行递归的，因为它的数值没有变，如果之前满足最大堆条件，现在就还是满足的
              */
-            maxHeap(arr, heapSize, largeSize);
+            maxHeap(arr, heapSize, largeSize);  // 如：第二次构建大顶堆的根节点大于第一次构建大顶堆的根节点
         }
     }
 }
