@@ -46,6 +46,8 @@ public class Test20201203 {
         for (int i : arr) {
             System.out.print(i + " ");
         }
+
+        fibonacciFind(arr, 10);
     }
 
     /**
@@ -223,5 +225,71 @@ public class Test20201203 {
         }
 
         return res;
+    }
+
+    /**
+     * 查找
+     * @param arr
+     * @param key
+     * @return
+     */
+    public static int find(int[] arr, int key) {
+        if (arr.length == 0)
+            return -2;
+        int lo = 0;
+        int high = arr.length - 1;
+        while (lo <= high) {
+            int mid = (lo + high) / 2;
+            if (key < arr[mid])
+                high = mid - 1;
+            else if (key > arr[mid])
+                lo = mid + 1;
+            else
+                return mid;
+        }
+        return -1;
+    }
+
+    public static int fibonacciFind(int[] arr, int key) {
+        if (arr.length == 0)
+            return -2;
+
+        int lo = 0;
+        int hi = arr.length - 1;
+        int mid = 0;
+        int k = 0;
+        int[] fi = fibonacci(100);
+        while (arr.length > fi[k] - 1)
+            k++;
+        int[] tmp = Arrays.copyOf(arr, fi[k]);
+        for (int i = arr.length; i < fi[k]; i++) {
+            tmp[i] = arr[arr.length - 1];
+        }
+        while (lo <= hi) {
+            mid = lo + fi[k - 1] - 1;
+            if (key < tmp[mid]) {
+                hi = mid - 1;
+                k--;    // 控制 mid 中的 k
+            } else if (key > tmp[mid]) {
+                lo = mid + 1;
+                k -= 2;
+            } else {
+                if (mid < arr.length - 1)
+                    return mid;
+                else
+                    return arr.length - 1;
+            }
+        }
+        return -1;
+    }
+
+    public static int[] fibonacci(int n) {
+        int[] fibonacci = new int[n];
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+        for (int i = 2; i < n; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+        return fibonacci;
     }
 }
