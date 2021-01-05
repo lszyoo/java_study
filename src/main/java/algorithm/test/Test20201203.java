@@ -183,7 +183,7 @@ public class Test20201203 {
                 for (int j = i; j >= gap && arr[j] < arr[j - gap]; j -= gap) {
                     int tmp = arr[j];
                     arr[j] = arr[j - gap];
-                    arr[j - gap] = arr[j];
+                    arr[j - gap] = tmp;
                 }
             }
         }

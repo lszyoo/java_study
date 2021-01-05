@@ -31,7 +31,7 @@ public class Test20201204 {
         head.next.next.next.next.next = new Node(6);
         head.next.next.next.next.next.next = new Node(7);
 
-        Node node = reverseList3(head, 4);
+        Node node = reverseList1(head);
 
         System.out.println(node.data);
         System.out.println(node.next.data);

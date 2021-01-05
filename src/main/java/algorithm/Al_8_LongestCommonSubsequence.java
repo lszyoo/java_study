@@ -1,6 +1,8 @@
 package algorithm;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Al_8_LongestCommonSubsequence {
     public static void main(String[] args) {
@@ -35,12 +37,8 @@ public class Al_8_LongestCommonSubsequence {
         System.out.println(sb.toString());
         return dp[m][n];
     }
-
     /**
      * 公共子串
-     * @param a
-     * @param b
-     * @return
      */
     public static int longestCommonSubstring(String a, String b) {
         int alen = a.length();
@@ -86,5 +84,49 @@ public class Al_8_LongestCommonSubsequence {
         }
 
         return res;
+    }
+
+    /**
+     * 最长回文
+     * @param s
+     * @return
+     */
+    public static String longestPalindrome(String s) {
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
+        String ans = "";
+        for (int l = 0; l < n; l++) {
+            for (int i = 0; i + l < n; i++) {
+                int j = i + l;
+                if (l == 0)
+                    dp[i][j] = true;
+                else if (l == 1)
+                    dp[i][j] = (s.charAt(i) == s.charAt(j));
+                else
+                    dp[i][j] = (s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1]);
+                if (dp[i][j] && l + 1 > ans.length())
+                    ans = s.substring(i, i + l + 1);
+            }
+        }
+        return ans;
+    }
+
+    /**
+     * 最长无重复字符子串
+     * @param str
+     * @return
+     */
+    public static int longest(String str) {
+        int n = str.length();
+        int ans = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int end = 0, start = 0; end < n; end++) {
+            char alpha = str.charAt(end);
+            if (map.containsKey(alpha))
+                start = Math.max(map.get(alpha), start);
+            ans = Math.max(ans, end - start + 1);
+            map.put(str.charAt(end), end + 1);
+        }
+        return ans;
     }
 }
